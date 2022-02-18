@@ -38,7 +38,7 @@ function openTab(evt, name) {
 // 	  if ( test for finished ) {
 // 	    clearInterval(id);
 // 	  } else {
-// 	    /* code to change the element style */  
+// 	    /* code to change the element style */
 // 	  }
 // 	}
 // }
