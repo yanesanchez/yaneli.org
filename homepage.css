@@ -118,8 +118,13 @@ body {
 
 .tab:hover  {     
 	cursor: pointer;
-	animation: fadeEffect 1.5s; /* Fading effect takes 1 second */
+	animation: fadeEffect 1s; /* Fading effect takes 1 second */
 	font-family: 'sonoregular';
+}
+
+.footer {
+	font-family: 'sonolight';
+	text-align: center;
 }
 
 /* Go from zero to full opacity */
