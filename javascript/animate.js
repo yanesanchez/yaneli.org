@@ -3,7 +3,7 @@ function stars(){
   var context = canvas.getContext("2d");
   var randomRadius;
 
-  context.strokeStyle = white;
+  context.strokeStyle = "black";
 
 
     randomRadius = random(0.3, 2);
@@ -11,7 +11,15 @@ function stars(){
     context.beginPath();
     context.arc(random(0, canvas.width), random(0, canvas.height), 1, 0, 2 * Math.PI);
     context.fill();
-  
+
+}
+
+function constellation() {
+  for (let i = 0; i < width * PI; i++) {
+    strokeWeight(random(0.25, 1.5));
+    stroke(random(150, 200));
+    point(random(width), random(height));
+  }
 }
 
 function gradient() {

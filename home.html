@@ -7,40 +7,45 @@
 	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 	<link rel="stylesheet" type="text/css" href="homepage.css">
 	<script type="text/javascript" src="javascript/homepage.js"></script>
+	<script type="text/javascript" src="javascript/animate.js"></script>
 </head>
 
 <body>
-<!-- HEADER & NAVIGATION -->
-<header>
-	<div class="topnav" id="myTopnav">
-		<a id="logo" href="index.html"><img src="images/icon_outline.png"></a>
-		<a href="home.html" class="tab active">Home</a>
-		<a href="about.html" class="tab">About</a>
-		<a href="resume.html" class="tab">Resume</a>
-		<a href="projects.html" class="tab">Projects</a>
-		<a href="contact.html" class="tab">Contact</a>
-		<a href="javascript:void(0);" class="icon" id="icon" onclick="adjust()">&#52;</a>
-	</div>
-</header>
-
-<!-- MAIN CONTENT -->
-<main>
-	<section>
-		<div id="home" class="canvasContainer">
-			<canvas id="canvas">
-				<script>stars();</script>
-			</canvas>
+	<!-- HEADER & NAVIGATION -->
+	<header>
+		<div class="topnav" id="myTopnav">
+			<a id="logo" href="index.html"><img src="images/icon_outline.png"></a>
+			<a href="home.html" class="tab active">Home</a>
+			<a href="about.html" class="tab">About</a>
+			<a href="resume.html" class="tab">Resume</a>
+			<a href="projects.html" class="tab">Projects</a>
+			<a href="contact.html" class="tab">Contact</a>
+			<a href="javascript:void(0);" class="icon" id="icon" onclick="adjust()">&#52;</a>
 		</div>
-	</section>
-</main>
+	</header>
 
-<!-- FOOTER -->
-<hr>
-<footer>
-	<div class="footer">
-		<p id="copyright">&copy; 2022 - Yaneli Sanchez</p>
-		<p id="font_copyright"><a href="fonts.html">fonts</a></p>
-	</div>
-</footer>
+	<!-- MAIN CONTENT -->
+	<main>
+		<section>
+			<div class="canvasContainer">
+				<!--<canvas id="canvas">
+					<script>stars();</script>
+				</canvas>-->
+				<div id="home" class="home_title">
+					<h1>hello,<br>
+					my name is Yaneli.</h1>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- FOOTER -->
+	<hr>
+	<footer>
+		<div class="footer">
+			<p id="copyright">&copy; 2022 - Yaneli Sanchez</p>
+			<p id="font_copyright"><a href="fonts.html">fonts</a></p>
+		</div>
+	</footer>
 </body>
 </html>
