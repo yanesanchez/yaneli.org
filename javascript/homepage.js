@@ -29,16 +29,3 @@ function openTab(evt, name) {
 	document.getElementById(name).style.display = "block";
 	evt.currentTarget.className += " active";
 }
-
-
-// function welcomeHome() {
-// 	id = setInterval(frame, 5);
-
-// 	function frame() {
-// 	  if ( test for finished ) {
-// 	    clearInterval(id);
-// 	  } else {
-// 	    /* code to change the element style */
-// 	  }
-// 	}
-// }

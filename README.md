@@ -3,11 +3,10 @@
 
 ## site map
 index.html
-	|_ home.html
-	|_ about.html
-	|_ resume.html
-	|_ projects.html
-	|_ contact.html
+	|-- home.html
+	|-- about.html
+	|-- resume.html
+	|-- projects.html
+	|-- contact.html
 	|
-	|_ font.html
-
+	|-- font.html

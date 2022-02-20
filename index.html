@@ -7,7 +7,7 @@
 	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 	<link rel="stylesheet" type="text/css" href="homepage.css">
 	<script type="text/javascript" src="javascript/homepage.js"></script>
-	<script type="text/javascript" src="javascript/p5.js"></script>
+	<script type="text/javascript" src="javascript/animate.js"></script>
 	<script type="text/javascript" src="javascript/sketch.js"></script>
 </head>
 
@@ -28,10 +28,10 @@
 	<!-- MAIN CONTENT -->
 	<main>
 		<section>
-			<div id="home" class="section home_canvas">
-				<div id="canvasContainer">
-
-				</div>
+			<div id="home" class="canvasContainer">
+				<canvas id="canvas">
+					<script>stars();</script>
+				</canvas>
 			</div>
 		</section>
 	</main>
