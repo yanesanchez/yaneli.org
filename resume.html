@@ -6,7 +6,6 @@
 	<title>Yaneli Sanchez</title>
 	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 	<link rel="stylesheet" type="text/css" href="homepage.css">
-	<script type="text/javascript" src="javascript/homepage.js"></script>
 	<style type="text/css">
 		/* to format lists in sections */
 		.left {
@@ -30,13 +29,20 @@
 			list-style: none;
 			list-style-position: outside;
 		}
-		.workdesc dd {
-			font-size: 85%;
+		.workTitle { font-family: 'sonoregular';}
+		.workCity, .skill {
+			font-size: 90%;
+			font-family: 'sonolight';
+		}
+		.workDate {
+			font-size: 80%;
 			font-family: 'sonoextralight';
 		}
 		.job { padding-bottom: 20px; }
+
 		#edu p { margin: 4px; }
 		h2 { font-family: 'sonosemibold'; }
+		.left { padding-left: 20px; }
 	</style>
 </head>
 
@@ -54,34 +60,43 @@
 	</div>
 </header>
 
+<!-- Name / Title -->
+<div class="title">
+	<h1>Yaneli Sanchez <a href="files/resume.pdf" target="_blank" class="pdf" id="resume_pdf">&nbsp;&#217;&nbsp;</a></h1>
+
+</div>
+
 <!-- MAIN CONTENT -->
 <main>
-	<section>
-		<div id="resume" class="section">
-
+	<div id="resume" class="main">
 <!-- RESUME ---------------------------------------------------------------------------------->
-		<!-- Name & Contact information -->
-			<h1 style="display: inline-block;">Yaneli Sanchez</h1>
-			<a href="files/resume.pdf" target="_blank" class="pdf" id="resume_pdf">&nbsp;&#217;&nbsp;</a>
+
 		<!-- Education -->
 			<section id="edu">
 				<h2> Education </h2>
 				<div class="left">
-					<p> Eastern Michigan University, Ypsilanti, Michigan </p>
-					<p>	Bachelor of Science in Computer Science </p>
-					<p>	Minor in Art </p>
+					<p>Eastern Michigan University</p>
+					<p>Ypsilanti, Michigan</p>
+					<p>Bachelor of Science in Computer Science</p>
+					<p>Minor in Art</p>
 				</div>
 			</section>
 		<!-- Computer Skills -->
 			<section id="compskills">
 				<h2> Computer Skills </h2>
 				<div class="left">
-					<p> <b>Languages:</b> Java, JavaScript, HTML, CSS, PHP, SQL, Python</p>
-					<p> <b>Operating Systems:</b> macOS, iOS, iPadOS, watchOS, Windows, Android </p>
-					<p> <b>Developer Tools:</b> IDEs, libraries, git, GitHub, cPanel</p>
-					<p> <b>Productivity Tools:</b> Microsoft Office, Google Workspace, Notion </p>
-					<p> <b>Software:</b> Adobe Creative Cloud - Photoshop, Illustrator, Premiere Pro, After Effects </p>
-
+					<dl>
+						<dt>Languages:</dt>
+							<dd class="skill">Java, JavaScript, HTML, CSS, PHP, SQL, Python</dd>
+					<dt>Operating Systems:</dt>
+						<dd class="skill">macOS, iOS, iPadOS, watchOS, Windows, Android</dd>
+					<dt>Developer Tools:</dt>
+						<dd class="skill"> IDEs, libraries, git, GitHub, cPanel</dd>
+					<dt>Productivity Tools:</dt>
+						<dd class="skill">Microsoft Office, Google Workspace, Notion</dd>
+					<dt>Software:</dt>
+						<dd class="skill"> Adobe Creative Cloud - Photoshop, Illustrator, Premiere Pro, After Effects</dd>
+					</dl>
 				</div>
 			</section>
 		<!-- Courses -->
@@ -120,8 +135,10 @@
 					<!--<p>Self Portrait - <i> Creative Coding </i></p>-->
 
 				</div>
+				<div>
 				<a class="button" href="projects.html">see all in <span style="font-family: sonosemibold">Projects</span>
 						<span style="font-family: outline_mix;">&nbsp;&nbsp;&nbsp;&#213;</span></a>
+				</div>
 			</section>
 		<!-- Work Experience -->
 			<section id="workex">
@@ -129,29 +146,28 @@
 				<div class="left">
 					<dl>
 					<div class="job">
-						<dt><span class="workTitle"> In-Shop and Sandwich Maker - <i> Jimmy John's</i></span></dt>
-							<span class="workdesc"><dd>Wyandotte, MI</dd>
-							<dd>June 2018 - October 2020 </dd></span>
+						<dt><span class="workTitle">In-Shop and Sandwich Maker - <i> Jimmy John's</i></span></dt>
+							<dd><span class="workCity">Wyandotte, MI</span></dd>
+							<dd><span class="workDate">June 2018 - October 2020</span></dd>
 						</dt>
 					</div>
 					<div class="job">
-						<dt><span class="workTitle"> Lead Artist - <i> Freestyle Face Painting</i></span></dt>
-							<span class="workdesc"><dd>Rockwood, MI </dd>
-							<dd>April 2016 - October 2016; April 2017 - September 2017</dd></span>
+						<dt><span class="workTitle">Lead Artist - <i> Freestyle Face Painting</i></span></dt>
+							<dd><span class="workCity">Rockwood, MI</span></dd>
+							<dd><span class="workDate">April 2017 - September 2017<br>April 2016 - October 2016</span></dd>
 						</dt>
 					</div>
 					<div class="job">
-						<dt><span class="workTitle"> Crew Member - <i> McDonald's </i></span></dt>
-							<span class="workdesc"><dd>Brownstown, MI</dd>
-							<dd>May 2015 - May 2016; November 2016 - May 2017 </dd></span>
+						<dt><span class="workTitle">Crew Member - <i> McDonald's</i></span></dt>
+							<dd><span class="workCity">Brownstown, MI</span></dd>
+							<dd><span class="workDate">November 2016 - May 2017<br>May 2015 - May 2016</span></dd>
 						</dt>
 					</div>
 				</dl>
 				</div>
 			</section>
 <!-- RESUME ---------------------------------------------------------------------------------->
-		</div>
-	</section>
+	</div>
 </main>
 
 
@@ -164,5 +180,6 @@
 		<p id="font_copyright"><a href="fonts.html">fonts</a></p>
 	</div>
 </footer>
+<script type="text/javascript" src="javascript/homepage.js"></script>
 </body>
 </html>
