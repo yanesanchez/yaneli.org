@@ -115,7 +115,7 @@ hr {
 }
 
 .main {
-	padding-left: 20px;
+	padding-left: 30px;
 	/*border: 1px solid black;*/
 }
 
@@ -133,7 +133,7 @@ hr {
 
 }
 
-.title { margin: 20px 45px;}
+.title { margin: 30px 60px;}
 
 .textblock {
 	padding: 0px 20px;
@@ -150,17 +150,19 @@ hr {
 
 .pdf {
 	font-family: 'outline_mix';
-	font-size: 48px;
+	font-size: 40px;
+	float: right;
 	text-decoration: none;
 	color: black;
 	margin: auto 30px;
+	display: inline;
 }
 
 .pdf:hover {
 	text-shadow: 0 0 5px black;
  }
 
- .button {
+.button {
  	background-color: #333333;
  	color: white;
  	text-align: center;
@@ -172,18 +174,18 @@ hr {
  	font-family: 'sonolight';
  }
 
- .button:hover {
- 	font-family: 'sonoregular';
+.button:hover {
+	font-family: 'sonoregular';
  	color: black;
  	animation: fadeEffect 1.5s; /* Fading effect takes 1 second */
  	background-color: white;
  }
 
- #creativeCoding {
+#creativeCoding {
 	list-style-type: none;
  }
 
- #index, #home  {
+#index, #home  {
 	background-color: black;
 	color: white;
  }
@@ -323,10 +325,13 @@ a.active {
 }
 
 @media screen and (max-width: 600px) {
-	title {
-	 margin: 20px 30px;
+	.title {
+	 margin: 30px 30px;
 	}
 	section {
 		margin: 30px 20px;
+	}
+	.skill, dd {
+		margin-left: 25px;
 	}
 }
