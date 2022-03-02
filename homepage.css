@@ -96,8 +96,9 @@ body {
 }
 
 h1 {
-	font-size: 44px;
+	font-size: 48px;
 	font-family: 'lazenby_computer';
+	padding: 10px;
 }
 
 h2 {
@@ -128,12 +129,16 @@ hr {
 }
 
 .home_title h1 {
-	font-size: 50px;
-	padding-top: 200px;
+	font-size: 60px;
+	padding-top: 180px;
+	margin: auto 1px;
 
 }
 
-.title { margin: 30px 60px;}
+.title {
+	text-align: center;
+	margin: 30px 60px;
+}
 
 .textblock {
 	padding: 0px 20px;
@@ -282,6 +287,7 @@ a.active {
  }
 
 
+
 /* ************************************************************************ */
 /* ANIMATIONS ============================================================= */
 /* Go from zero to full opacity */
@@ -325,6 +331,10 @@ a.active {
 }
 
 @media screen and (max-width: 600px) {
+	.home_title h1 {
+		margin: inherit 1px;
+	}
+
 	.title {
 	 margin: 30px 30px;
 	}
@@ -334,4 +344,6 @@ a.active {
 	.skill, dd {
 		margin-left: 25px;
 	}
+
+
 }
