@@ -1,7 +1,15 @@
 html, body {
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 canvas {
+  border: 1px solid black;
   display: block;
+  margin: auto;
+}
+
+.main {
+  width: 100%;
+  margin: auto;
+  text-align: center;
 }
