@@ -3,7 +3,7 @@
 */
 
 let input, inputElement;
-let enterBtn, eBtnW, eBtnH; 
+let enterBtn, eBtnW, eBtnH;
 let randomBtn, rBtnW, rBtnH;
 let wordNumBtn = [], wnBtnW, wnBtnH;
 let colorSlider, colorVal;
@@ -13,7 +13,8 @@ let ritaText, txtP;
 
 function setup() {
   // sketch setup -----------------------
-  createCanvas(600, 400);
+  let canvas = createCanvas(600, 400);
+  canvas.parent("canvasContainer");
   colorMode(HSB);
   background(0);
   fill(255);
@@ -28,7 +29,7 @@ function setup() {
   lexicon = new RiLexicon();
 
   setupInput();
-  setupClickables(); 
+  setupClickables();
   setupClickableFunctions();
   setupColorSlider();
   ritaText = input.changed(processRita);
@@ -37,14 +38,14 @@ function setup() {
 function draw() {
   // use slider to set background color
   setBackground();
-  
+
   // draw the buttons -------------------
   enterBtn.draw();
   randomBtn.draw();
   for (let i = 0; i < wordNumBtn.length; i++) {
     wordNumBtn[i].draw();
   }
- 
+
 } // end of draw()
 
 
@@ -56,7 +57,7 @@ function setupInput() {
   // input.changed(processRita);
   input.size(210);
   input.position(10, (height-60));
-  
+
 }
 
 function setBackground(){
@@ -73,15 +74,15 @@ function setupClickables() {
   enterBtn.resize(eBtnW, eBtnH);
   enterBtn.locate(10, height - 30);
   enterBtn.text = "enter";
-  
-  
+
+
   // Random Button ~ to generate random word
   randomBtn = new Clickable();
   randomBtn.cornerRadius = 0;
   randomBtn.resize(rBtnW, rBtnH);
   randomBtn.locate(100, height - 30);
   randomBtn.text = "u can type in that box";
-  
+
   // Word Number Buttons ~ sets how many words to return
   for (let i = 0; i < 4; i++) {
     wordNumBtn[i] = new Clickable();
@@ -90,7 +91,7 @@ function setupClickables() {
     wordNumBtn[i].locate(((width/2)+(wnBtnW+btnSpacing)*i), (height-(25)));
     wordNumBtn[i].text = [i+1];
   }
-    
+
 }
 
 // Setup functions
@@ -113,7 +114,7 @@ function setupClickableFunctions() {
     this.color = '#AAAAAA';
     this.textColor = '#000000';
   }
-  
+
   // random
   randomBtn.onOutside = function() {
     this.color = '#FFFFFF'
@@ -131,7 +132,7 @@ function setupClickableFunctions() {
     this.color = '#AAAAAA';
     this.textColor = '#000000';
   }
-  
+
    //for (let i = 0; i < 4; i++) {
     // wordNumBtn[i].onOutside = function() {
     //this.color = '#FFFFFF'
@@ -140,7 +141,7 @@ function setupClickableFunctions() {
     // wordNumBtn[i].onPress = function() {}
     // wordNumBtn[i].onRelease = function() {}
   //}
-  
+
 }
 
 function setupColorSlider() {
@@ -174,7 +175,7 @@ function processRita() {
       output += " ";
     }
   }
-  
+
   //ritaText = createP(output);
  //ritaText.style('font-size', '45px');
   //ritaText.position(0, 100);

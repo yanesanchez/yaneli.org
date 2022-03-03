@@ -6,12 +6,13 @@ let squArre, squSide, squCount, squStroke, squColor, squPos;
 let isShaking;
 
 function setup() {
-  createCanvas(500, 500);
+  let canvas = createCanvas(500, 500);
+  canvas.parent("canvasContainer");
   rectMode(CENTER);
   squSide = 500;
   squCount = random(20, 80);
   squStroke = random(2);
-  squArre = new Array(23);  
+  squArre = new Array(23);
   isShaking = false;
   frameRate(fr);
   strokeJoin(ROUND);
@@ -56,8 +57,7 @@ function mousePressed(){
    isShaking = true;
 }
 
-// immediately returns to previous screen 
+// immediately returns to previous screen
 function mouseReleased(){
   isShaking = false;
 }
-

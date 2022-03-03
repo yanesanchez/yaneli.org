@@ -3,8 +3,8 @@
 
 DESCRIPTION:
 ~ note: click/press/touch used interchangably; drag/move used interchangably.
-  Upon start, the canvas is completely black. Starting at the top, pressing downwards along the y-axis will decrease opacity, while pressing upwards will increase opacity again. When the opacity decreases, shapes will start to appear. 
-  The rectangle at the bottom is actually a "button." The button registers events even while opacity is changing, as long as it is within the bounds of the button. Clicking the button 13 times will lead to near-full transparency before the canvas (toptopLyr) clears to reveal the shapes, which are on their own canvas (topLyr). 
+  Upon start, the canvas is completely black. Starting at the top, pressing downwards along the y-axis will decrease opacity, while pressing upwards will increase opacity again. When the opacity decreases, shapes will start to appear.
+  The rectangle at the bottom is actually a "button." The button registers events even while opacity is changing, as long as it is within the bounds of the button. Clicking the button 13 times will lead to near-full transparency before the canvas (toptopLyr) clears to reveal the shapes, which are on their own canvas (topLyr).
   After the button registers 13 clicks, a silhouette will be revealed on top of the shapes. Dragging along the screen will now change the background to one of seven colors. The button will continue to register events after 13 clicks until there has been a total of 30 clicks.
   When pressed, the three shapes on the screen will slowly decrease in opacity. Dragging the mouse or moving your finger around will still change the background color but clicks will only be added to the count if the button at the bottom has been pressed. Once 30 clicks have been reached, the shapes will now be transparent, leaving only the silhouette and background visible.
 */
@@ -86,7 +86,8 @@ function setup() {
   chakraWidth = 21;
   chakraHeight = 21;
   // layers
-  createCanvas(canvasWidth, canvasHeight);  // base
+  let canvas = createCanvas(canvasWidth, canvasHeight);  // base
+  canvas.parent("canvasContainer");
   topLyr = createGraphics(canvasWidth, canvasHeight);  // middle
   toptopLyr = createGraphics(canvasWidth, canvasHeight);  // top-most
   // color & opacity variables
@@ -97,10 +98,10 @@ function setup() {
   tClr2 = midMapAlph;  // middle mt layer foreground
   toptopLyr.background(0);  // top-most layer
   //topLyr.background(160);  // middle layer
-  
+
     // MIDDLE LAYER
   // <<< mountain range type thing >>>
-  topLyr.fill(0);  
+  topLyr.fill(0);
   // bottom black button
   button = topLyr.rect(45, height - 90, width - 90, 90);
   // middle black triangle
@@ -108,8 +109,8 @@ function setup() {
   topLyr.strokeWeight(5);
   // top black circle
   sun = topLyr.ellipse(width/2, height/9, 75, 75);
-  
-  
+
+
   // TOP-MOST ---------------
   image(toptopLyr, 0, 0);
   fill(255, 160);
@@ -124,7 +125,7 @@ function draw() {
   topMapClr = map(mouseY, 0, height, 0, 225);
   topMapAlph = map(topMapClr, 0, height, 0, 255);
   midMapAlph = map(clickCount, 0, 30, 0, 255);
-  
+
   // ----------------- BACKGROUND LAYER --------------------
   // <<< lotus pose silhouette >>>
   stroke(0);
@@ -134,7 +135,7 @@ function draw() {
   vertex(156, 204);
   // RIGHT SIDE ~~~~~~~~~~~~~~~~~~~~~~~
   // neck up -----
-  bezierVertex(154, 204, 149, 168, 179, 168);  // L head 
+  bezierVertex(154, 204, 149, 168, 179, 168);  // L head
   bezierVertex(208, 168, 204, 199, 202, 202);  // R head
   bezierVertex(201, 206, 208, 195, 206, 207);  // R top ear
   bezierVertex(204, 223, 203, 218, 202, 220);  // R bottom ear
@@ -167,7 +168,7 @@ function draw() {
   bezierVertex(167, 474, 103, 480, 83, 479);  // L bottom of leg
   bezierVertex(60, 479, 32, 476, 29, 455);  // L bottom knee
   bezierVertex(26, 429, 50, 427, 55, 424);  // L top knee
-  bezierVertex(66, 419, 105, 418, 116, 413);  // L top of leg  
+  bezierVertex(66, 419, 105, 418, 116, 413);  // L top of leg
   // torso -------
   bezierVertex(128, 409, 145, 386, 145, 370);  // L abdomen
   bezierVertex(146, 354, 137, 334, 136, 320);  // L waist to armpit
@@ -193,7 +194,7 @@ function draw() {
   bezierVertex(159, 218, 157, 224, 152, 207);  // L bottom ear
   bezierVertex(150, 201, 152, 199, 156, 204);  // L top ear
   endShape();
-  
+
   // --------------------- IN THE LAYERS -------------------
   // 0: red, 1: orange, 2: yellow, 3: green, 4: blue, 5: indigo, 6: violet
   // BASE LAYER -------------
@@ -209,22 +210,22 @@ function draw() {
   if(!isCleared){  // wont keep rendering canvas after it's been cleared
     image(toptopLyr, 0, 0);  // top-most layer
     image(topLyr, 0, 0);  // middle layer
-    
+
   }
-  
+
   // pointer
   fill(255, random(120, 160));
   stroke(255, random(90, 160));
-  strokeWeight(random(3, 20)); 
+  strokeWeight(random(3, 20));
   wand = ellipse(mouseX, mouseY, 15, 15);  // circle follows pointer
 }
 
 // ======================== EVENTS =========================
 temp = 0;
 function mousePressed() {
-  
+
   midMapAlph = map(clickCount, 0, 30, 255, 0);
-  // TOP LAYER --------------- 
+  // TOP LAYER ---------------
   //topLyr.rect(45, height - 90,  width - 90, 90); - ~ middle layer reference
   if(!isCleared){ // checks if top-most layer has been cleared
     toptopLyr.background(topMapClr, topMapClr);
@@ -248,9 +249,9 @@ function mousePressed() {
     }
     //image(topLyr, 0, 0);  // middle layer
   } else {
-    
+
   }
-  
+
   // testing
   console.log("isCleared: " + isCleared);
   console.log("click count: " + clickCount);

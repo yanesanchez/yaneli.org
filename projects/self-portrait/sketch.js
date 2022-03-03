@@ -1,11 +1,12 @@
 function setup() {
-  createCanvas(360, 640);
+  let canvas = createCanvas(360, 640);
+  canvas.parent("canvasContainer");
 }
 
 function draw() {
   background(100);
   //ellipse(width/2, height/2, width-100, height/2);
-  
+
   // FACE ----------------------
   fill('#fff9f0');
   beginShape();
@@ -20,8 +21,8 @@ function draw() {
   bezierVertex(317, 309, 330, 366, 326, 384);
   bezierVertex(316, 436, 323, 456, 303, 484);
   endShape();
-  
-  
+
+
   // HAIR ----------------------
     // Left
   fill('#588164');
@@ -58,8 +59,8 @@ function draw() {
   bezierVertex(171, 146, 260, 176, 292, 196);
   endShape();
   triangle(161, 161, 220, 163, 190, 170);
-  
-  
+
+
   // EYES ----------------------
     // LEFT
       // base
@@ -91,7 +92,7 @@ function draw() {
   fill('#FFFFFF');
   ellipse(96, 310, 9, 6);
   ellipse(88, 314, 6, 4);
-  
+
     // RIGHT
       // base
   fill('#dbb9d4');
@@ -123,8 +124,8 @@ function draw() {
   fill('#FFFFFF');
   ellipse(240, 309, 10, 6);
   ellipse(233, 315, 8, 5);
-  
-  
+
+
   // EYE DETAILS ---------------
   noFill();
   stroke('#444444');
@@ -135,8 +136,8 @@ function draw() {
   // right
   bezier(292, 307, 287, 299, 279, 292, 268, 290);
   bezier(268, 290, 252, 285, 234, 294, 223, 311);
-  
-  
+
+
   // EYEBROWS ------------------
     // LEFT
   fill('#588164');
@@ -156,8 +157,8 @@ function draw() {
   bezierVertex(200, 265, 210, 279, 210, 279);
   bezierVertex(252, 267, 285, 256, 302, 275);
   endShape();
-  
-  
+
+
   // NOSE ----------------------
   noFill();
   stroke('#747474');
@@ -170,7 +171,7 @@ function draw() {
   bezier(157, 405, 159, 406, 160, 408, 163, 409);
   bezier(163, 409, 164, 410, 170, 411, 167, 408);
   bezier(167, 408, 160, 401, 155, 401, 153, 404);
-  
+
   // MOUTH ---------------------
   stroke('#366842');
   strokeWeight(1.2);
@@ -188,7 +189,7 @@ function draw() {
   bezier(182, 452, 185, 453, 189, 454, 193, 452);
   bezier(193, 452, 197, 450, 209, 452, 214, 454);
   bezier(214, 454, 221, 456, 226, 459, 239, 458);
-  
+
   // FACE DETAILS
   stroke('#dbdcd2');
   bezier(182, 438, 180, 440, 182, 445, 183, 444);
@@ -202,14 +203,14 @@ function draw() {
   noStroke();
   triangle(83, 315, 87, 309, 79, 308);
   triangle(289, 313, 285, 306, 296, 306);
-  
+
   // GLASSES -------------------
     // FRAMES
-  
+
     // ARMS
-  
+
     // LENSES
-  
+
 }
 
 // ===========================================

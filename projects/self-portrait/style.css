@@ -1,15 +1,18 @@
+/*
 html, body {
   margin: auto;
   padding: 0;
 }
-canvas {
-  border: 1px solid black;
-  display: block;
+*/
+
+body {
+  /*background-color: black;
+  color: white;*/
+  width: 90%;
   margin: auto;
+  text-align: center;
 }
 
-.main {
-  width: 100%;
-  margin: auto;
+h1 {
   text-align: center;
 }

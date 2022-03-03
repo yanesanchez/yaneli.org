@@ -4,7 +4,8 @@ let currentState = 0;
 let image0, image1, image2, image3, image4, image5, image6, image7;
 
 function setup() {
-  createCanvas(360, 640);
+  let canvas = createCanvas(360, 640);
+  canvas.parent("canvasContainer");
   image0 = createGraphics(360, 640);
   textFont('Courier New');
   textSize(16);
@@ -31,7 +32,7 @@ function draw() {
   }
   drawTransformedShape();
   drawChakras();
-  
+
   if (currentState == 0){
     image0.stroke(0);
     image0.strokeWeight(3);
@@ -77,7 +78,7 @@ function draw() {
   } else if (currentState == 3) {  // 3 solar plexus
     image3.stroke(0);
     image3.strokeWeight(3);
-    image3.fill(chakras[2]._color.hex);         
+    image3.fill(chakras[2]._color.hex);
     image3.textAlign(CENTER);
     image3.textSize(50);
     image3.textFont('Courier New');
@@ -91,7 +92,7 @@ function draw() {
   } else if (currentState == 4) {  // 4 heart
     image4.stroke(0);
     image3.strokeWeight(3);
-    image4.fill(chakras[3]._color.hex);         
+    image4.fill(chakras[3]._color.hex);
     image4.textAlign(CENTER);
     image4.textSize(50);
     image4.textFont('Courier New');
@@ -105,7 +106,7 @@ function draw() {
   } else if (currentState == 5) {  // 5 throat
     image5.stroke(0);
     image5.strokeWeight(3);
-    image5.fill(chakras[4]._color.hex);         
+    image5.fill(chakras[4]._color.hex);
     image5.textAlign(CENTER);
     image5.textSize(50);
     image5.textFont('Courier New');
@@ -119,7 +120,7 @@ function draw() {
   } else if (currentState == 6) {  // 6 third eye
     image6.stroke(0);
     image6.strokeWeight(3);
-    image6.fill(chakras[5]._color.hex);         
+    image6.fill(chakras[5]._color.hex);
     image6.textAlign(CENTER);
     image6.textSize(50);
     image6.textFont('Courier New');
@@ -133,7 +134,7 @@ function draw() {
   } else if (currentState == 7) {  // 7 crown
     image7.stroke(0);
     image7.strokeWeight(3);
-    image7.fill(chakras[6]._color.hex);         
+    image7.fill(chakras[6]._color.hex);
     image7.textAlign(CENTER);
     image7.textSize(50);
     image7.textFont('Courier New');
@@ -145,7 +146,7 @@ function draw() {
     image7.text(chakras[6].says, width/2, height - 20);
     image(image7, 0, 0);
   }
-  
+
 }
 
 // ==================================================
@@ -264,7 +265,7 @@ function drawLotusFigure(){
   vertex(156, 204);
   // RIGHT SIDE ~~~~~~~~~~~~~~~~~~~~~~~
   // neck up -----
-  bezierVertex(154, 204, 149, 168, 179, 168);  // L head 
+  bezierVertex(154, 204, 149, 168, 179, 168);  // L head
   bezierVertex(208, 168, 204, 199, 202, 202);  // R head
   bezierVertex(201, 206, 208, 195, 206, 207);  // R top ear
   bezierVertex(204, 223, 203, 218, 202, 220);  // R bottom ear
@@ -297,7 +298,7 @@ function drawLotusFigure(){
   bezierVertex(167, 474, 103, 480, 83, 479);  // L bottom of leg
   bezierVertex(60, 479, 32, 476, 29, 455);  // L bottom knee
   bezierVertex(26, 429, 50, 427, 55, 424);  // L top knee
-  bezierVertex(66, 419, 105, 418, 116, 413);  // L top of leg  
+  bezierVertex(66, 419, 105, 418, 116, 413);  // L top of leg
   // torso -------
   bezierVertex(128, 409, 145, 386, 145, 370);  // L abdomen
   bezierVertex(146, 354, 137, 334, 136, 320);  // L waist to armpit

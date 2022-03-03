@@ -11,7 +11,8 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(360, 640);
+  let canvas = createCanvas(360, 640);
+  canvas.parent("canvasContainer");
   colorMode(HSB, 360, 100, 100, 100);
   imageMode(CENTER);
  // headPNG.loadPixels();
@@ -23,9 +24,9 @@ function setup() {
   headY = height;
   for(let i = 0; i < max; i++){
     headArr[i] = new HeadPNG(headPNG, headX*1.25, headY*2);
-      
+
   }
-  
+
 }
 
 function draw() {
@@ -35,7 +36,7 @@ function draw() {
   // head.drawHair(hairColor);
   // head.display(30, 30);
   //mage(headPNG, width/2, height/2);
-  
+
   for(let i = 0; i < max; i++){
     scale(head.randomScaleFactor());
     colArr[i] = color(131, noise(0,99), noise(0,99));
@@ -56,33 +57,33 @@ class HeadPNG {
     this.headY = headY;
     this.img = img;
     //img = headPNG;
-    //this.img = image(newImage, headX, headY); 
+    //this.img = image(newImage, headX, headY);
   }
-  
+
   randomScaleFactor(){
     scaleFactor = random(0.4, 1.2);
     return scaleFactor;
   }
-  
+
   setX(newX){
     headX = newX;
   }
-  
+
   getX(){
     return headX;
   }
-  
+
   setY(newY){
     headY = newY;
   }
-  
+
   getY(){
     return headY;
   }
-  
+
   createHeads(){
-  
-  } 
+
+  }
 }
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -109,14 +110,14 @@ class Head {
     this.drawFace(faceColor);
     this.drawHair(hairColor);
   }
-  
+
   display(trX, trY){
     this.trX = trX;
     this.trY = trY;
     push();
     translate(trX, trY);
     pop();
-    
+
   }
 
   drawFace(fCol) {
@@ -172,7 +173,7 @@ class Head {
     bezierVertex(171, 146, 260, 176, 292, 196);
     endShape();
     triangle(161, 161, 220, 163, 190, 170);
-    
+
   }
-  
+
 } */
