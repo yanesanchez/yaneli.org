@@ -13,8 +13,7 @@ let ritaText, txtP;
 
 function setup() {
   // sketch setup -----------------------
-  let canvas = createCanvas(600, 400);
-  canvas.parent("canvasContainer");
+  createCanvas(600, 400);
   colorMode(HSB);
   background(0);
   fill(255);
@@ -56,7 +55,7 @@ function setupInput() {
   input = createInput("box of type");
   // input.changed(processRita);
   input.size(210);
-  input.position(10, (height-60));
+  input.position(10, 10);
 
 }
 
@@ -72,7 +71,7 @@ function setupClickables() {
   enterBtn = new Clickable();
   enterBtn.cornerRadius = 0;
   enterBtn.resize(eBtnW, eBtnH);
-  enterBtn.locate(10, height - 30);
+  enterBtn.locate(10, 40);
   enterBtn.text = "enter";
 
 
@@ -80,17 +79,19 @@ function setupClickables() {
   randomBtn = new Clickable();
   randomBtn.cornerRadius = 0;
   randomBtn.resize(rBtnW, rBtnH);
-  randomBtn.locate(100, height - 30);
+  randomBtn.locate(100, 40);
   randomBtn.text = "u can type in that box";
 
+  /*
   // Word Number Buttons ~ sets how many words to return
   for (let i = 0; i < 4; i++) {
     wordNumBtn[i] = new Clickable();
     wordNumBtn[i].cornerRadius = 0;
     wordNumBtn[i].resize(wnBtnW, wnBtnH);
-    wordNumBtn[i].locate(((width/2)+(wnBtnW+btnSpacing)*i), (height-(25)));
+    wordNumBtn[i].locate(((width/2)+(wnBtnW+btnSpacing)*i), 40);
     wordNumBtn[i].text = [i+1];
   }
+  */
 
 }
 
@@ -146,7 +147,7 @@ function setupClickableFunctions() {
 
 function setupColorSlider() {
   colorSlider = createSlider(0, 360, 180, 10);
-  colorSlider.position(width/2, height - 60);
+  colorSlider.position(width/2, 25);
   colorSlider.style('width', '280px');
   colorSlider.style('height', '25px');
 }
@@ -155,7 +156,7 @@ function setupColorSlider() {
 // ===========================================
 // RITA LIBRARY METHODS
 // help from: https://www.youtube.com/watch?v=lIPEvh8HbGQ
-let y = -60;  // starting y value for output position
+let y = 50;  // starting y value for output position
 function processRita() {
 //split up string
   let s = input.value();
@@ -182,8 +183,9 @@ function processRita() {
   txtP = createP(output);
   console.log(txtP);
   txtP.style('font-size', '36px');
+  txtP.style('text-align', 'center');
   txtP.position(10, y+=28);
-  text(txtP, 0, 0);
+  //text(txtP, 100, 100);
 }
 
 
