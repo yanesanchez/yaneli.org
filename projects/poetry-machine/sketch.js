@@ -6,14 +6,20 @@ let input, inputElement;
 let enterBtn, eBtnW, eBtnH;
 let randomBtn, rBtnW, rBtnH;
 let wordNumBtn = [], wnBtnW, wnBtnH;
+/* implemented for one slider */
 let colorSlider, colorVal;
+/* implemented for three sliders */
+let hueSlider, hueVal;
+let saturationSlider, saturationVal;
+let brightnessSlider, brightnessVal;
 let btnSpacing;
 let font, lexicon;
 let ritaText, txtP;
 
 function setup() {
   // sketch setup -----------------------
-  createCanvas(600, 400);
+  let canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent("canvasContainer");
   colorMode(HSB);
   background(0);
   fill(255);
@@ -55,8 +61,7 @@ function setupInput() {
   input = createInput("box of type");
   // input.changed(processRita);
   input.size(210);
-  input.position(10, 10);
-
+  input.position((windowWidth/2)-250, 12);
 }
 
 function setBackground(){
@@ -64,22 +69,22 @@ function setBackground(){
   background(colorVal, 100, 100, 1);
 }
 
-
+// *******************************************
+// REPLACE WITH LINKING BUTTONS FROM DOM
 // Clickable Library setup ------------
 function setupClickables() {
   // Enter Button ~ to submit input
   enterBtn = new Clickable();
   enterBtn.cornerRadius = 0;
   enterBtn.resize(eBtnW, eBtnH);
-  enterBtn.locate(10, 40);
+  enterBtn.locate(windowWidth/2, 10);
   enterBtn.text = "enter";
-
 
   // Random Button ~ to generate random word
   randomBtn = new Clickable();
   randomBtn.cornerRadius = 0;
   randomBtn.resize(rBtnW, rBtnH);
-  randomBtn.locate(100, 40);
+  randomBtn.locate((windowWidth/2)+100, 10);
   randomBtn.text = "u can type in that box";
 
   /*
@@ -92,11 +97,12 @@ function setupClickables() {
     wordNumBtn[i].text = [i+1];
   }
   */
-
 }
+// *******************************************
 
 // Setup functions
-
+// *******************************************
+// REPLACE WITH BUTTON CSS STYLING
 function setupClickableFunctions() {
   enterBtn.onOutside = function() {
     this.color = '#FFFFFF'
@@ -142,21 +148,43 @@ function setupClickableFunctions() {
     // wordNumBtn[i].onPress = function() {}
     // wordNumBtn[i].onRelease = function() {}
   //}
-
 }
+// *******************************************
 
 function setupColorSlider() {
   colorSlider = createSlider(0, 360, 180, 10);
-  colorSlider.position(width/2, 25);
-  colorSlider.style('width', '280px');
+  colorSlider.position(30, 50);
+  colorSlider.style('width', '90%');
   colorSlider.style('height', '25px');
+}
+
+function setupHSBColorSliders() {
+  hueSlider = createSlider(0, 360, 180, 10);
+    //hueVal;
+  saturationSlider = createSlider(0, 360, 180, 10);
+    //saturationVal;
+  brightnessSlider = createSlider(0, 360, 180, 10);
+    //brightVal;
+  //colorSlider = createSlider(0, 360, 180, 10);
+//colorSlider.style('width', '90%');
+  hueSlider.style('width', '90%');
+  brightnessSlider.style('width', '90%');
+  saturationSlider.style('width', '90%');
+//colorSlider.position(30, 50);
+  hueSlider.position(30, 50);
+  brightnessSlider.position(30, 100);
+  saturationSlider.position(30, 150);
+ // colorSlider.style('height', '25px');
+  hueSlider.position(30, 50);
+  brightnessSlider.position(30, 100);
+  saturationSlider.position(30, 150);
 }
 
 
 // ===========================================
 // RITA LIBRARY METHODS
 // help from: https://www.youtube.com/watch?v=lIPEvh8HbGQ
-let y = 50;  // starting y value for output position
+let y = 30;  // starting y value for output position
 function processRita() {
 //split up string
   let s = input.value();
@@ -182,9 +210,9 @@ function processRita() {
   //ritaText.position(0, 100);
   txtP = createP(output);
   console.log(txtP);
-  txtP.style('font-size', '36px');
   txtP.style('text-align', 'center');
-  txtP.position(10, y+=28);
+  txtP.style('font-size', '36px');
+  txtP.position(30, y+=28);
   //text(txtP, 100, 100);
 }
 

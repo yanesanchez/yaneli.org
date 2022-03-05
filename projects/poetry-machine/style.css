@@ -13,3 +13,51 @@ h1 {
 p {
   text-align: center;
 }
+
+table, td {
+/*  border: 1px solid black;*/
+  border-collapse: collapse;
+}
+
+
+.sliderD {
+  width: 90%;
+}
+
+.slider {
+  width: 95%;
+  height: 30px;
+  background-color: lightgray;
+  opacity: 0.7;
+  outline: none;
+  transition: opacity .2s;
+  border-radius: 10px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+.inputPanel {
+  width: 90%;
+  margin: 20px auto;
+  padding: 10px;
+/*  border: 1px solid black;*/
+}
+
+.hsb {
+  width: 5%;
+  padding: 5px 20px;
+}
+
+#bV, #sV, #hV {}
+
+
+#mainPara {
+  font-size: 32px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  height: 2px;
+  padding: 0px;
+  margin: 0px;
+}
