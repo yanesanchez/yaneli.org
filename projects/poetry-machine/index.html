@@ -24,8 +24,8 @@
     </p>
     <div class="inputPanel">
       <script src="/javascript/rita-full.js"></script>
-      <input type="text" name="input" id="textInput" value="box of type" size="50">
-      <button type="button" name="button" onclick="processRita()">enter</button>
+      <input type="text" name="input" id="textInput" value="box of type" size="40"><br>
+      <button type="button" name="button" id="enter" onclick="processRita()">enter</button>
     </div>
     <div class="inputPanel">
       <table>
@@ -34,6 +34,11 @@
           <td class="hsb" id="fsV">16px</td>
           <td class="sliderD">
             <input type="range" class="slider" id="fontSizeR" name="fontSizeR" min="4" max="60" value="16" onchange="updateFontSize()">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <br>
           </td>
         </tr>
         <tr>
