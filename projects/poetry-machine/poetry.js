@@ -19,7 +19,6 @@ function updateBackground() {
     //document.getElementsByClassName("slider").style.color = "white";
   } else {
     document.body.style.color = "black";
-
   }
   document.body.style.backgroundColor = "hsl("+hVal+", "+sVal+"%, "+bVal+"%)";
 }
@@ -30,14 +29,11 @@ function updateBackground() {
 // RITA LIBRARY METHODS
 // help from: https://www.youtube.com/watch?v=lIPEvh8HbGQ
 
-let y = 30;  // starting y value for output position
 let inputTxt;
-let font, lexicon;
-let ritaText, txtP;
+let lexicon;
 
 function setupRita() {
   lexicon = new RiLexicon();
-
 }
 
 function processRita() {
@@ -60,20 +56,9 @@ function processRita() {
       output += " ";
     }
   }
-
-  //ritaText = createP(output);
- //ritaText.style('font-size', '45px');
-  //ritaText.position(0, 100);
-
-  //txtP = createP(output);
-  document.getElementById("outputTxt").innerHTML = output;
-  //txtP.parent("outputTxt");
-  //txtP = document.getElementById("outputTxt").value;
-  console.log(output);
-  //txtP.style('text-align', 'center');
-  //txtP.style('font-size', '36px');
-  //txtP.position(30, y+=28);
-  //text(txtP, 100, 100);
+  //console.log(output);
+  output += "<br>";
+  document.getElementById("outputTxt").innerHTML += output;
 }
 
 /*
