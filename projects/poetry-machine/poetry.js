@@ -1,4 +1,8 @@
+// =======================================================
+// MAIN METHODS
+
 let hVal, sVal, bVal;
+
 function updateBackground() {
   // hue
   hVal = document.getElementById("hueR").value;
@@ -20,15 +24,27 @@ function updateBackground() {
   document.body.style.backgroundColor = "hsl("+hVal+", "+sVal+"%, "+bVal+"%)";
 }
 
+
+
+// =======================================================
 // RITA LIBRARY METHODS
 // help from: https://www.youtube.com/watch?v=lIPEvh8HbGQ
+
 let y = 30;  // starting y value for output position
-let input;
+let inputTxt;
+let font, lexicon;
+let ritaText, txtP;
+
+function setupRita() {
+  lexicon = new RiLexicon();
+
+}
+
 function processRita() {
-  input = document.getElementById("textInput").value;
+  inputTxt = document.getElementById("textInput").value;
 //split up string
   //let s = input.value();
-  let rs = new RiString(input);
+  let rs = new RiString(inputTxt);
   let words = rs.words();
 //get parts of speech
   let pos = rs.pos();
@@ -48,11 +64,15 @@ function processRita() {
   //ritaText = createP(output);
  //ritaText.style('font-size', '45px');
   //ritaText.position(0, 100);
-  txtP = createP(output);
-  console.log(txtP);
-  txtP.style('text-align', 'center');
-  txtP.style('font-size', '36px');
-  txtP.position(30, y+=28);
+
+  //txtP = createP(output);
+  document.getElementById("outputTxt").innerHTML = output;
+  //txtP.parent("outputTxt");
+  //txtP = document.getElementById("outputTxt").value;
+  console.log(output);
+  //txtP.style('text-align', 'center');
+  //txtP.style('font-size', '36px');
+  //txtP.position(30, y+=28);
   //text(txtP, 100, 100);
 }
 
