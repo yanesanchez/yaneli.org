@@ -2,6 +2,7 @@
 // MAIN METHODS
 
 let hVal, sVal, bVal;
+let fSize;
 
 function updateBackground() {
   // hue
@@ -23,6 +24,11 @@ function updateBackground() {
   document.body.style.backgroundColor = "hsl("+hVal+", "+sVal+"%, "+bVal+"%)";
 }
 
+function updateFontSize() {
+  fSize = document.getElementById("fontSizeR").value;
+  document.getElementById("fsV").innerHTML = fSize + "px";
+  document.getElementById("outputTxt").style.fontSize = fSize + "px";
+}
 
 
 // =======================================================
@@ -60,10 +66,3 @@ function processRita() {
   output += "<br>";
   document.getElementById("outputTxt").innerHTML += output;
 }
-
-/*
-hVal = document.getElementById('hueR').value;
-sVal = document.getElementById('saturationR').value;
-bVal = document.getElementById('brightnessR').value;
-document.body.style.backgroundColor = "hsl("+hVal+", "+sVal+", "+bVal+")";
-*/
