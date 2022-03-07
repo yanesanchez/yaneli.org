@@ -1,105 +1,84 @@
 @font-face {
     font-family: 'typewriter_mono_blackIt';
-    src: url('jmh_typewriter_mono_black_italic-webfont.woff2') format('woff2'),
-         url('jmh_typewriter_mono_black_italic-webfont.woff') format('woff'),
-         url('jmh_typewriter_mono_black_italic-webfont.ttf') format('truetype');
+    src: url('fonts/typewriter-mono/jmh_typewriter_mono_black_italic-webfont.woff2') format('woff2'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_black_italic-webfont.woff') format('woff'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_black_italic-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'typewriter_mono_blackRg';
-    src: url('jmh_typewriter_mono_black-webfont.woff2') format('woff2'),
-         url('jmh_typewriter_mono_black-webfont.woff') format('woff'),
-         url('jmh_typewriter_mono_black-webfont.ttf') format('truetype');
+    src: url('fonts/typewriter-mono/jmh_typewriter_mono_black-webfont.woff2') format('woff2'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_black-webfont.woff') format('woff'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_black-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'typewriter_mono_boldIt';
-    src: url('jmh_typewriter_mono_bold_italic-webfont.woff2') format('woff2'),
-         url('jmh_typewriter_mono_bold_italic-webfont.woff') format('woff'),
-         url('jmh_typewriter_mono_bold_italic-webfont.ttf') format('truetype');
+    src: url('fonts/typewriter-mono/jmh_typewriter_mono_bold_italic-webfont.woff2') format('woff2'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_bold_italic-webfont.woff') format('woff'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_bold_italic-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'typewriter_mono_boldRg';
-    src: url('jmh_typewriter_mono_bold-webfont.woff2') format('woff2'),
-         url('jmh_typewriter_mono_bold-webfont.woff') format('woff'),
-         url('jmh_typewriter_mono_bold-webfont.ttf') format('truetype');
+    src: url('fonts/typewriter-mono/jmh_typewriter_mono_bold-webfont.woff2') format('woff2'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_bold-webfont.woff') format('woff'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_bold-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'typewriter_mono_fineIt';
-    src: url('jmh_typewriter_mono_fine_italic-webfont.woff2') format('woff2'),
-         url('jmh_typewriter_mono_fine_italic-webfont.woff') format('woff'),
-         url('jmh_typewriter_mono_fine_italic-webfont.ttf') format('truetype');
+    src: url('fonts/typewriter-mono/jmh_typewriter_mono_fine_italic-webfont.woff2') format('woff2'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_fine_italic-webfont.woff') format('woff'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_fine_italic-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'typewriter_mono_fineRg';
-    src: url('jmh_typewriter_mono_fine-webfont.woff2') format('woff2'),
-         url('jmh_typewriter_mono_fine-webfont.woff') format('woff'),
-         url('jmh_typewriter_mono_fine-webfont.ttf') format('truetype');
+    src: url('fonts/typewriter-mono/jmh_typewriter_mono_fine-webfont.woff2') format('woff2'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_fine-webfont.woff') format('woff'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono_fine-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'typewriter_mono';
-    src: url('jmh_typewriter_mono-webfont.woff2') format('woff2'),
-         url('jmh_typewriter_mono-webfont.woff') format('woff'),
-         url('jmh_typewriter_mono-webfont.ttf') format('truetype');
+    src: url('fonts/typewriter-mono/jmh_typewriter_mono-webfont.woff2') format('woff2'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono-webfont.woff') format('woff'),
+         url('fonts/typewriter-mono/jmh_typewriter_mono-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
 
 
 body {
   /*background-color: black;
   color: white;*/
+font-family: 'typewriter_mono';
   width: 90%;
   margin: auto;
   text-align: center;
 }
 
 h1 {
+  font-size: 40px;
+  font-family: "typewriter_mono_blackRg";
   text-align: center;
 }
 
 p {
+
   text-align: center;
 }
 
@@ -109,9 +88,28 @@ table, td {
 }
 
 td {
-
+  font-family: 'typewriter_mono_fineRg';
 }
 
+input {
+  font-family: 'typewriter_mono_fineRg';
+}
+
+button {
+  font-family: 'typewriter_mono';
+  background-color: lightgray;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
+
+button:hover {
+  background-color: white;
+  box-shadow: 0 0 2px 2px lightgray;
+}
+
+button:active {
+  background-color: lightgray;
+}
 
 .sliderD {
   width: 85%;
@@ -145,7 +143,9 @@ td {
   padding: 5px 15px;
 }
 
-#bV, #sV, #hV {}
+#bV, #sV, #hV {
+  font-family: 'typewriter_mono';
+}
 
 
 #outputTxt {
