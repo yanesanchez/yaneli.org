@@ -102,7 +102,7 @@ h1 {
 }
 
 h2 {
-	font-size: 34px;
+	font-size: 32px;
 }
 
 /*.homeIcon img:hover { background-color: black; }*/
@@ -163,7 +163,7 @@ a:active {
 }
 
 .textblock {
-	padding: 0px 20px;
+	padding: 0px 25px;
 }
 
 .footer {
@@ -392,6 +392,9 @@ a.active {
 	}
 	section {
 		margin: 30px 20px;
+	}
+	.textblock {
+		padding: 0px 20px;
 	}
 
 
