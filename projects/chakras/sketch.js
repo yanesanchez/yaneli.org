@@ -212,6 +212,7 @@ let chakras = [
   },
 ];
 
+// uses arrow keys to change states
 function keyPressed(){
   if (keyCode == RIGHT_ARROW){  // change state with arrow keys
     currentState++;
@@ -223,7 +224,23 @@ function keyPressed(){
   } if (currentState < 0) {
     currentState = 7;
   }
-  console.log("Current state: " + currentState);
+  //console.log("Current state: " + currentState);
+  return false; // prevent default browser behavior
+}
+
+// uses mouse or touch input to change states
+function mousePressed() {
+  if (mouseX < width/2) {
+    currentState--;
+  } else if (mouseX >= width/2) {
+    currentState++;
+  }
+  if(currentState > 7) {  // repeat states
+    currentState = 0;
+  } if (currentState < 0) {
+    currentState = 7;
+  }
+  //console.log("Current touch state: " + currentState);
 }
 
 // from p5js Examples page
